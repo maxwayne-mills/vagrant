@@ -4,9 +4,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "setup.sh"
   config.vm.provision "ansible" do |ansible|
     ansible.verbose = "-v"
+    ansible.config_file = "/home/cmills/Documents/repositories/ansible/ansible.cfg"
     ansible.playbook = "/home/cmills/Documents/repositories/ansible/roles/users/users.yml"
-    ansible.inventory_path = ".vagrant/provisioners/ansible/inventory/"
-    ansible_roles_path = "/home/cmills/Documents/repositories/ansible/roles"
     ansible.limit = "all"
   end
 end
