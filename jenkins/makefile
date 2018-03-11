@@ -1,7 +1,8 @@
 # Configure environment
 
 .clone:
-	git clone https://github.com/maxwayne-mills/config-managment.git
+	rm -rf ansible
+	git clone https://github.com/maxwayne-mills/ansible.git
 
 .clean:
 	rm -rf config-managment .vagrant
@@ -13,6 +14,12 @@ all: .clone
 	vagrant up --provision
 
 clean: .clean
+
+provision:
+	vagrant provision
+
+status:
+	vagrant status
 
 destroy: .destroy-existing
 	
