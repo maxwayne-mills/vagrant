@@ -15,6 +15,8 @@ all: .clone
 
 clean: .clean
 
+resync: .clone
+
 provision:
 	vagrant provision
 
