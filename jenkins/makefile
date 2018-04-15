@@ -2,7 +2,7 @@
 
 .clone:
 	rm -rf ansible
-	git clone https://github.com/maxwayne-mills/ansible.git
+	git clone --depth=1 https://github.com/maxwayne-mills/ansible.git
 
 .clean:
 	rm -rf config-managment .vagrant
@@ -25,3 +25,4 @@ status:
 
 destroy: .destroy-existing
 	
+clone: .clone
